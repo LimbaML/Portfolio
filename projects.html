@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+
+    <style type="text/css">
+      /* Fonts */
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+    *,
+    ::after,
+    ::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: cursive;
+      background: powderblue;
+      color: hsl(209, 61%, 16%);
+      line-height: 1.5;
+      font-size: 0.875rem;
+    }
+    h2,h4 {
+      letter-spacing: 0.2rem;
+      text-transform: capitalize;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      font-family: "Roboto", sans-serif;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+    h4 {
+      font-size: 0.875rem;
+    }
+    p {
+      margin-bottom: 1.25rem;
+      color: gray;
+    }
+
+/*
+=============== 
+Reviews
+===============
+*/
+    main {
+      min-height: 90vh;
+      display: grid;
+      place-items: center;
+    }
+    .title {
+      text-align: center;
+      margin-top: 0.1rem;
+      margin-bottom: 2.5rem;
+    }
+    .underline {
+      height: 0.25rem;
+      width: 5rem;
+      background: #2364d2;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .container {
+      width: 80vw;
+      max-width: 600px;
+    }
+    .review {
+      background: white;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow:  0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s linear;
+      text-align: center;
+    }
+    .review:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .img-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-bottom: 1.5rem;
+    }
+    #img {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+    }
+    .img-container::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f10e";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      transform: translateY(25%);
+      background: #2364d2;
+      color: white;
+    }
+    .img-container::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #2364d2;position: absolute;top: -0.25rem;
+      right: -0.5rem;
+      border-radius: 50%;
+    }
+    #name {
+      margin-bottom: 0.25rem;
+    }
+    #title {
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      color: gray;
+      font-size: 0.85rem;
+    }
+    #info {
+      margin-bottom: 0.75rem;
+    }
+        .prev-btn,
+        .next-btn {
+          color: #2364d2;
+          font-size: 1.25rem;
+          background: transparent;
+          border-color: transparent;
+          margin: 0 0.5rem;
+          transition: color 0.3s linear;
+          cursor: pointer;
+        }
+        .prev-btn:hover,
+        .next-btn:hover {
+          color: black;
+        }
+        .copy{
+          width: 100%;
+          text-align: center;
+          border: none;
+          margin-top:100px;
+
+          font-size: 18px;
+        }
+        .back-button {
+            position: fixed;
+            margin-top: 6px;
+            right:0px;
+            background-color: #713ABE;
+            color: white;
+            border: none;
+            padding: 9px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: darkviolet;
+        }
+        button{
+          margin-right:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+      <section class="container">
+        <!-- title -->
+        <button class="back-button" onclick="goBack()">Back</button>
+        <div class="title">
+          <h2>Mini Projects</h2>
+          <div class="underline"></div>
+        </div>
+        <!-- review -->
+        <article class="review">
+          <div class="img-container">
+            <img src="" id="img" alt="" />
+          </div>
+          <h4 id="name"></h4>
+          <p id="title"></p>
+          <p id="info">
+          </p>
+          <!-- prev next buttons-->
+          <div class="button-container">
+            <button class="prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <!-- random button -->
+          
+        </article>
+      </section>
+    </main>
+    <!-- javascript -->
+    <footer class="copy" >
+        <p style="color: black;
+">Copyright&copy;2023.All rights reserved</p>
+        
+    </footer>
+    <script>
+     
+const reviews = [
+  {
+    id: 1,
+    name: "TRANSMISSION OF DATA USING LI-FI",
+    title: "Embedded Systems",
+    img:
+      "lifi.jpg",
+    text:
+      "The Li-Fi data transmission project showcased the intriguing concept of using visible light and an IR sensor for data communication. Through the use of an LED as a transmitter and an IR sensor as a receiver, we achieved a basic form of Li-Fi communication.Though this implementation was simple, it provided valuable insights into the fundamental principles of Li-Fi. In practice, real-world Li-Fi systems are more intricate, employing advanced encoding, modulation techniques, and error correction mechanisms for reliable and high-speed data transfer.While our project acted as a stepping stone, the potential for further advancements in the field of Li-Fi is significant. Researchers can explore optimizing data transfer rates, extending the range and coverage, and integrating Li-Fi with existing communication networks for seamless data integration.As the technology progresses, Li-Fi holds promise as an alternative to traditional radio frequency methods, offering advantages in scenarios with RF limitations. As we continue to refine and expand Li-Fi applications, it has the potential to reshape the way we exchange information, fostering a more connected and efficient digital world.",
+  },
+  {
+    id: 2,
+    name: "SMART IRRIGATION",
+    title: "Internet Of Things",
+    img:
+      "irrigation.jpg",
+    text:
+      
+
+      "The logic of this system is very simple. In this system, the moisture sensor senses the moisture level of the soil and when the sensor senses a low moisture level it automatically switches the water pump with the help of a microcontroller and irrigates the plant. After supplying sufficient water, the soil gets retains the moisture hence automatically stopping the pump.It has 2 probes with exposed contacts that act like a variable resistor whose resistance varies according to the water content in the soil. This resistance is inversely  proportional to the soil moisture which means that higher water in the  soil means better conductivity and hence a lower resistance. While the lower water in the soil means poor conductivity and will result in higher connects the probe to the Arduino. The module has an Connect Arduino & LCD using breadboard as shown in the diagram.We have to connect relay, soil moisture sensor, and Humidity Sensor with arduino.Upload code in arduino.For uploading code,you have to download 1 library called “dht library”.Connect battery and DC water pump with relay.Finally,connect the setup with  plant for smart irrigation.",
+  },
+  {
+    id: 3,
+    name: "OVERFLOW ALARM",
+    title: "Transistor Implementation ",
+    img:
+      "overflow alarm.jpg",
+    text:
+      "A Water Level Indicator is a system that relays information back to a control panel to indicate whether a body of water had a high or low water level. Some water level indicator use a combination of probe sensors or float wires to sense water levels.The Water Level Indicator employs a simple mechanism to detect and indicate the water level in an overhead tank or any other water container.The circuit is designed to indicate for levels of water stored in the tank , 20% filed, 50% filled, 75%filled,98%filled. When there is no water in the tank, all the Leds are off as an indication that the tank is completely empty.When water levels increases and touches the sensor, the BLUE LED will glow indicating that there is 20% water within the tank. As the water levels continuous to rise and reaches 50% the RED LED glow.For 75% GREEN LED will glow.When the water in the tank rises to full an alarm is made by the buzzer and finally the WHITE LED will glow indicating 98% filled. The white Led is fixed will glow indicating 98% so that the overflow can be prevented.The system designed is economical and can be expanded as it allows connection and controlling of a number of different devices.",
+  },
+  {
+    id: 4,
+    name: "AUDIO VIDEO HOME ENTERTAINMENT SYSTEM",
+    title: "Embedded Systems",
+    img:
+      "universal remote.jpg",
+    text:
+      "The system utilizes IR technology to wirelessly transmit control signals between the remote control and the audio-video equipment. The remote control emits modulated infrared light signals, which are received by IR sensors on the devices. These sensors decode the signals, translating them into specific commands that the devices can understand and execute. This enables seamless communication and control between the remote control and the audio-video equipment, creating a unified and user-friendly multimedia experience.The IR remote-controlled audio-video system offers several advantages. Firstly, it simplifies the management of multiple devices by consolidating control into a single remote control unit. This eliminates the need for juggling multiple remotes, reducing clutter and improving usability. Additionally, the system enhances user convenience by providing a centralized control solution, enabling users to operate various audio and video devices from a comfortable location.",
+  },
+];
+
+// select items to change
+const img = document.getElementById("img");
+const name = document.getElementById("name");
+const title = document.getElementById("title");
+const info = document.getElementById("info");
+
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+// set first item
+let currentItem = 0;
+
+// load initial item
+window.addEventListener("DOMContentLoaded", function () {
+  const item = reviews[currentItem];
+  img.src = item.img;
+  name.textContent = item.name;
+  title.textContent = item.title;
+  info.textContent = item.text;
+});
+
+// save person data
+function showPerson(person) {
+  const item = reviews[person];
+  img.src = item.img;
+  name.textContent = item.name;
+  title.textContent = item.title;
+  info.textContent = item.text;
+}
+// show next person
+nextBtn.addEventListener("click", function () {
+  currentItem++;
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0;
+  }
+  showPerson(currentItem);
+});
+
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson(currentItem);
+});
+
+randomBtn.addEventListener("click", function () {
+  console.log("hello");
+
+  currentItem = Math.floor(Math.random() * reviews.length);
+  showPerson(currentItem);
+});
+
+ function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Resume</title>
+    <style type="text/css">
+    	body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: powderblue;
+        }
+
+        header, section, footer {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #333;
+        }
+
+        header p {
+            color: #666;
+        }
+
+        section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+        }   
+
+       .back-button {
+            position: fixed;
+            margin-top: 6px;
+            right:0px;
+            background-color: #713ABE;
+            color: white;
+            border: none;
+            padding: 9px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: darkviolet;
+        }
+        button{
+          margin-right:25px;
+        }
+
+</style>
+
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">Back</button>
+    <header>
+        <h1>LIMBA ML</h1>
+        <p>Electronics and Communication Engineering Student</p>
+    </header>
+
+    <section id="education">
+        <h2>Educational Background</h2>
+        <p>
+        	<strong>Christ The King Mat.Hr.Sec School,Chennai-100.</strong><br>SSLC - 89.5%<br>2018 - 2019<br>HSC - 90%<br>2020 - 2021<br><br><strong>St . Joseph's Institute Of Technology , OMR.</strong><br>B.E.Electronics and Communication Engineering(pursuing)<br>Cgpa - 7.9(4th sem)<br>2021-2025</p>
+    </section>
+
+    <section id="skills">
+        <h2>Soft Skills</h2>
+        <ul>
+        	<li>Soft Skills</li>
+            <li>Leadership</li>
+            <li>Adaptability</li>
+            <li>Quick Learner</li>
+            <li>Team work </li>
+            <li>Critical thinking</li>
+            <li>Conflict resolution</li>
+            <li>Flexibility</li>
+        </ul>
+        
+    </section>
+
+    <section id="projects">
+        <h2>Mini Projects</h2>
+        <ul>
+        	<li><strong>Overflow Alarm</strong></li>
+            <p>A project based on water level indicating system in the overhead tank</p>
+            <li><strong>Smart Irrigation</strong></li>
+            <p>A project based on technology that automates lawn care and adjusts watering schedule based on weather, soil, and plant conditions</p>
+            <li><strong>Audio Video Home Entertainment System</strong></li>
+            <p>A project based on Embedded System , Universal remote made of IR is made to control the audio and video sytem of home
+            </p>
+            <li><strong>Data Transmission using LI-FI</strong></li>
+            <p>Transmission of data from one point to another using the light </p>
+        </ul>
+
+       
+    </section>
+
+    <section id="interests">
+        <h2>Interests</h2>
+        <ul>
+        	<li>Web development
+        </li>
+        	<li>Cloud Computing
+        </li>
+        	<li>App Development</li>
+        	<li>IOT</li>
+        </ul>
+       
+    </section>
+
+    <section id="internship">
+        <h2>Internship</h2>
+        
+        <ol>
+        	<li><strong>Internship Training on Android Application Development ,</strong>Internship on Embedded System at <strong>National Small Industries Corporation</strong>,Dec 19 to 26 , 2022</li>
+        	<li><strong>Indian Institute Of Information Technology , Design And Manufacturing</strong>,Done project in embedded domain,<strong>Audio Video Home Entertainment System with arduino</strong>,May 3 to 31 , 2023.
+        	</li>
+        </ol>
+
+
+    </section>
+
+    <section id="tech-skills">
+        <h2>Technical Skills</h2>
+        
+        <ol>
+        	<li>C Programming</li>
+        	<li>Python Basics</li>
+        	<li>Java Basics</li>
+        	<li>Html and css</li>
+
+        </ol>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+        	<li>Learning Arduino: Foundations - LinkedIn Learning</li>
+            <li>Raspberry Pi Essential Training - LinkedIn Learning</li>
+            <li>Git from Scratch -LinkedIn Learning</li>
+            <li>Certificate for the Completion of C and CPP Training - Spoken Tutorials </li>
+            <li>Java for beginners: Step-by-step hands-on guide to Java - Infosys Springboard</li>
+            <li>Cloud Computing - NPTEL</li>
+            <li>Introduction to Front-End Developement Course By Meta</li>
+            <li>Html and Css in depth By Meta</li>
+            <li>Programming with javascript By Meta</li>
+            <li>Version Control By Meta</li>
+            <li>Principles of UI/UX Design By Meta</li>
+            
+        </ul>
+       
+    </section>
+
+    <footer >
+        <p style="height: 2px">Copyright&copy;2023.All rights reserved.</p>
+        
+    </footer>
+     <script type="text/javascript">
+         function goBack() {
+            window.location.href = 'index.html';
+        }
+     </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Me</title>
+	<link rel="stylesheet" type="text/css" href="port.css"> 
+	<script src="https://kit.fontawesome.com/59e3a96dbd.js" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+    	
+     	
+        body{
+    	    background-color: powderblue;
+    	}
+    	.contact-left{
+	        flex-basis:35% ;
+        }
+        .contact-right{
+	        flex-basis:60% ;
+        }
+        .contact-left p{
+	        margin-top: 30px;
+	    }
+        .contact-left p i{
+	        color: #b54769;
+         	margin-right: 15px;
+	        font-size: 25px;
+        }
+        .social-icons{
+	        margin-top: 30px;
+        }
+        .social-icons a{
+	        text-decoration: none;
+	        font-size: 30px;
+	        margin-right: 15px;
+	        color:#ababab;
+	        display: inline-block;
+	        transition: transform 0.5s;
+        }
+        .social-icons a:hover{
+	        color: #ff004f;
+	        transform: translateY(-5px);
+        }
+        .btn.btn2{
+	        display: inline-block;
+	        background: #ff004f;
+	    }
+        .contact-left h1{
+          text-shadow: 3px 3px #D988B9;
+        }
+        .contact-right form{
+	        width: 100%;
+        }
+        form input,form textarea{
+	        width: 100%;
+	        border: 0;
+	        outline:none ;
+	        background:#262626;
+	        padding: 15px;
+	        margin: 15px 0;
+	        color: #fff;
+	        font-size: 18px;
+	        border-radius: 6px; ;
+	    }
+
+        form .btn2{
+	        padding: 14px 60px;
+	        font-size: 18px;
+	        margin-top: 20px;
+	        cursor: pointer;
+	        margin-right: 50px;
+        }
+
+        .copy{
+	        width: 100%;
+	        text-align: center;
+	        background-color:powderblue;
+	        border: none;
+	        margin-top:100px;
+	        font-size: 18px;
+	    }
+
+        .btnm{
+	        margin-left: 80%;
+	    }
+
+	    #msg{
+          color:#b54769;
+          margin-top: -40px;
+          display: block;
+        }
+       @media screen and (max-width: 600px) {
+        body {
+           background-color: powderblue;
+           margin-top: 30px;
+        }
+      
+      
+        form input,form textarea{
+	        width: 350px;
+	       
+	        outline:none ;
+	        
+	        padding: 15px;
+	        margin: 15px 0;
+	        color: #fff;
+	        font-size: 18px;
+	        border-radius: 6px; ;
+	    }
+	    .btnm{
+	    	margin:0px ;
+	    	margin-left:150px;
+
+	    }
+	    .copy{
+	    	width:30%;
+	    	background-color: powderblue;
+	    	text-align: center;
+	    	margin-top: 35%;
+	    	margin-left:100px;
+
+	    }
+	    
+        }
+
+
+       .back-button {
+            position: fixed;
+            margin-top: 6px;
+            right:0px;
+            background-color: #713ABE;
+            color: white;
+            border: none;
+            padding: 9px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+           background-color: darkviolet;
+        }
+        button{
+        	margin-right:10px;
+        }
+
+
+
+</style>
+</head>
+<body>
+
+<div id="contact">
+	<div class="container">
+		<button class="back-button" onclick="goBack()">Back</button>
+		<div class="row">
+			<div class="contact-left">
+				<h1 class="sub-title">Contact Me</h1>
+				<p><i class="fa-regular fa-paper-plane"></i><span style="color:black;">Email:</span> limba1229@gmail.com</p>
+				<p><i class="fa-solid fa-phone"></i> <span style="color:black;">Call:</span>9360596873</p>
+				<a href="Limba ML CV.pdf" download class="btn btn2" style="color:black; margin-bottom: 0px;" >Download Cv</a>
+				<div class="social-icons">
+					<a href="https://www.instagram.com/the_endearing_soul_12/"><i class="fa-brands fa-square-instagram" style="color: hotpink; "></i></a>
+					<a href="https://www.linkedin.com/in/limba-m-l-9747a5253/"><i class="fa-brands fa-linkedin" style="color:#0802A3;"></i></a>
+					<a href="https://github.com/LimbaML"><i class="fa-brands fa-github"style="color:black;"></i></a>
+				</div>
+				    
+			</div>
+			<div class="contact-right">
+           <form name="submit-to-google-sheet" action="" method="post">
+					<input type="text" name="Name" placeholder="Your Name" required>
+					<input type="email" name="email" placeholder="Your Email Id" required>
+					<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+					<button type="submit" class="btn btn2 btnm" style="color:black;">Submit</button>
+				 </form>
+				 <span id="msg"></span>
+
+			</div>
+		</div>
+		<div class="copy">
+		
+        <h4>Copyright&copy;2023.</h4>
+    </div>																																
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbycbrARjWDVZntyY3orWqLm9SQ_j1hPHKZNQwOhSzfK63v7OYpp5_wnxErdJLzxXKRv/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg=document.getElementById("msg");
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>{ 
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },1000)
+            form.reset()
+        } )
+        .catch(error => console.error('Error!', error.message))
+    })
+
+
+     function goBack() {
+            window.location.href = 'index.html';
+        }
+ 
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="port.css">
+    <script src="https://kit.fontawesome.com/59e3a96dbd.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #mobile-menu-btn {
+            display: none;
+        }
+        .logo {
+            margin-top: 12px;
+        }   
+        img {
+            margin-top: 30px;
+        }
+
+         
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            #header {
+                padding: 10px;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text {
+                margin-bottom: 20px;
+            }
+
+            .about-img {
+                order: -1;
+            }
+
+            #sidemenu {
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                margin-right: 20px;
+                width: 20%;
+                background-color: #f4f4f4;
+                text-align: center;
+                z-index: 1;
+            }
+
+            #mobile-menu-btn {
+                display: inline;
+                font-size: 25px;
+                cursor: pointer;
+                align-self: center;
+            }      
+            .container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between; 
+            }
+
+            
+            section {
+                height: calc(100vh - 50px); /* Adjusted height for mobile view */
+            }
+        }
+
+
+        /* Media query for iPad Mini view */
+        
+        /* Media query for iPad Mini view */
+            @media only screen and (device-width: 768px) and (device-height: 1024px){
+                #sidemenu {
+                    display: none;
+                    flex-direction: row;
+                    position: absolute;
+                    margin-top: 160px;
+                    right:50px;
+                    width: 20%;
+                    background-color: white;
+                }
+
+                .about {
+                    padding: 10px;
+                    margin-left: 0px;
+                    margin-bottom: 0px;
+                    margin-top: 50px;
+                }
+
+                #mobile-menu-btn {
+                    display: inline;
+                    font-size: 25px;
+                    cursor: pointer;
+                    align-self: center;
+                }
+
+                .logo {
+                    font-size: 24px;
+                    display: inline-block;
+                    margin-right: 10px;
+                    align-self: center;
+                    margin-top: 9.5px;
+                }
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between; 
+                }
+
+                section {
+                    height: 888px;
+                }
+                i {
+                    margin-top: 10px;
+                }
+                h2{
+                    margin-top: 50px;
+                }
+                img{
+                    margin-top: 0px;
+                }
+            }
+
+
+        /* Media query for mobile devices */
+            @media only screen and (max-width: 480px) {
+                body {
+                    font-size: 12px;
+                    position: absolute;
+            }
+
+            #header {
+                padding: 5px;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 24px;
+                display: inline-block;
+                margin-right: 10px;
+                align-self: center;
+                margin-top: 9.5px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between; 
+            }
+
+            .about {
+                padding: 10px;
+                margin-left: 0px;
+                margin-bottom: 0px;
+            }
+
+            .about-text {
+                font-size: 18px;
+            }
+
+            .about-img img {
+                height: auto;
+                max-width: 100%;
+            }
+
+            #sidemenu {
+                display: none;
+                flex-direction: column;
+                width: 40%;
+                margin-left: 41%;
+            }
+
+            #mobile-menu-btn {
+                display: inline;
+                font-size: 25px;
+                cursor: pointer;
+                align-self: center;
+            }
+
+            section {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-circle-nodes" style="color: brown;">𝓛𝓲𝓶𝓫𝓪</i> 
+                </div>
+
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Portfolio</a></li>
+                </ul>
+            </nav>
+            <i class="fa-solid fa-bars" id="mobile-menu-btn" onclick="toggleMenu()"></i>
+        </div>
+
+        <section>
+            <div class="about">
+                <div class="about-text">
+                    <h2 style="font-size: 50px">Hey there! This is Limba here❤️</h2>
+                    <p style="color:black">A young enthusiastic Web Developer, UI/UX Designer, Electronics Engineer.</p>
+                    <p class="button">
+                        <a href="contact.html"><button class="custom-btn btn-2">Contact Me</button></a>
+                    </p>
+                </div>
+
+                <div class="about-img">
+                    <img src="sideview.jpg" alt="My Photo" height="500px">
+                </div>
+            </div>
+        </section>
+
+        <div class="footer">
+            <h5>Copyright&copy;2023. All rights reserved.</h5>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sidemenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        // Add an event listener to the document to close the menu when clicking outside of it
+        document.addEventListener('click', function (event) {
+            var menu = document.getElementById("sidemenu");
+            var menuBtn = document.getElementById("mobile-menu-btn");
+
+            // Check if the clicked element is not part of the menu or the menu button
+            if (!menu.contains(event.target) && event.target !== menuBtn) {
+                menu.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+     

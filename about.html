@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0px;
+            background-color: powderblue;
+            color: #AE445A;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            color: #AE445A;
+        }
+
+        .about-col-2 {
+            flex-basis: 50%;
+            border-radius: 20px;
+
+        }
+
+        .tab-contents {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tab-contents p {
+            line-height: 1;
+        }
+
+        .active-tab {
+            display: inline-block;
+            margin: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            position: relative;
+            cursor: pointer;
+            color: #713ABE;
+        }
+
+        .active-tab::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #D3756B;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        .active-tab:hover::after {
+            width: 100%;
+        }
+
+        h1 {
+            text-shadow: 2px 2px 5px #82DBD8;
+        }
+
+        span {
+            font-weight: bold;
+            color: #9A208C;
+        }
+
+        button{
+            margin:0px;
+         }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #713ABE;
+            color: white;
+            border: none;
+            padding: 9px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+           background-color: darkviolet;
+        }
+        
+        .image-container {
+            background:url('passport2.jpg');
+            margin-top: 100px;
+            border-radius: 20px;
+            height: 400px;
+            width: 350px;
+            margin-left: 120px;
+            background-repeat: no-repeat;
+           
+
+        }
+        .sub-title{
+            text-shadow: 2px 2px 5px #9A208C;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                
+
+            }
+            .tab-contents {
+                margin-top: 16px;
+                margin-left: 10px;
+            }
+
+            .back-button{
+                margin-right: 10px;
+                margin-top: 3px;
+            }
+
+            .image-container {
+                background:url('passport2.jpg');
+                margin-top: 60px;
+                margin-right: 30px;
+                margin-left: 30px;
+                margin-bottom: 20px;
+            }
+            .about-col-2 {
+                margin-left: 20px; /* Set a fixed maximum height for the container */
+            }
+
+            .tab-contents p {
+
+                line-height: 1.5;
+            }
+
+            }
+
+            @media only screen and (device-width: 768px) and (device-height: 1024px){
+            
+            .image-container {
+            background:url('passport2.jpg');
+            margin-top: 100px;
+            border-radius: 20px;
+            height: 400px;
+            width: 350px;
+            margin-left: 10px;
+            background-repeat: no-repeat;
+           
+
+            }
+
+            .container{
+                margin-top: 70px;
+            }
+
+            }
+
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">Back</button>
+
+    <div class="container">
+        <div class="about-col-1">
+            <!--<img src="passport2.jpg" alt="Passport Photo">-->
+            <div class="image-container"></div>
+        </div>
+        <div class="about-col-2">
+            <h1 class="sub-title">ABOUT ME</h1>
+            <div>
+                <p class="active-tab" onclick="toggleParagraph('title1')">Education</p>
+                <p class="active-tab" onclick="toggleParagraph('title2')">Skills</p>
+                <p class="active-tab" onclick="toggleParagraph('title3')">Internship</p>
+            </div>
+            <div id="title1" class="tab-contents">
+                <p><span><strong>Christ The King Mat.Hr.School,Chennai-100.</strong></span><br><br><i>SSLC - <span style="color:#713ABE">89.5%</span></i> <br>2018 - 2019<br><br><i>HSC -<span style="color:#713ABE"> 90%</span></i><br>2020 - 2021<br><br><span><strong>St.Joseph's Institute Of Technology , OMR.</strong></span><br><br>B.E.Electronics and Communication Engineering(pursuing).<br><br><i>Cgpa - 7.9(4th sem)</i><br>2021-2025</p>
+            </div>
+            <div id="title2" class="tab-contents">
+                <p><span><strong>Technical Skills & Proficiencies</strong></span><br><br>C Programming<br><br>Python Basics<br><br>Java Basics<br><br>Html and Css<br><br></p>
+            </div>
+            <div id="title3" class="tab-contents">
+                <p><span><strong>National Small Industries Corporation</strong></span><br><br><i>Internship Training on Android Application Development</i> <br><br>Dec 19 to 26 , 2022<br><br>Attended training on app development with java<br><br><span><strong>Indian Institute Of Information Technology , Design And Manufacturing</strong></span><br><br><i>Internship on Embedded System</i> <br><br>May 3 to 31 , 2023<br><br>Done project in embedded domain - Audio Video Home Entertainment System with Arduino.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleParagraph(titleId) {
+            // Hide all paragraphs
+            var paragraphs = document.querySelectorAll('.tab-contents');
+            paragraphs.forEach(function (paragraph) {
+                paragraph.style.display = 'none';
+            });
+
+            // Display the clicked paragraph
+            var clickedParagraph = document.getElementById(titleId);
+            clickedParagraph.style.display = 'block';
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
+
+
